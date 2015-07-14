@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150713202658) do
   end
 
   create_table "travel_plans", force: :cascade do |t|
-    t.boolean  "international?",       default: false
+    t.boolean  "international?",      default: false
     t.string   "destination_city"
     t.string   "destination_country"
     t.string   "departure_city"
@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(version: 20150713202658) do
     t.integer  "users_id"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer  "total_estimated_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "user_name"
+    t.string   "user_name"
     t.string   "user_email"
+    t.string   "password_digest"
     t.string   "f_name"
     t.string   "l_name"
     t.string   "user_profile_image"

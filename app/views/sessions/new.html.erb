@@ -1,0 +1,10 @@
+			<h1>Please log in to Travel Planner </h1>
+			<div id="login-box">
+				<%= form_tag '/login', :class => 'login_form' do %>
+					<%= label_tag :username %>:<br>
+				  <%= text_field_tag :user_name %><br>
+				  <%= label_tag :password %>:<br>
+				  <%= password_field_tag :password %>	<%= submit_tag :login %><br><br>
+				<% end %>
+				<%= link_to 'Sign Up as a New User', new_user_path %>
+			</div>

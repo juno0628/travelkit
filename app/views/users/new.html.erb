@@ -1,0 +1,21 @@
+
+<h1> New User Sign Up Page </h1>
+<h3> Please fill in all required information </h3>
+
+<%= form_tag users_path, method: 'post', :class => 'sign_up_form' do %>
+					<%= label_tag :username %>:<br>
+				  <%= text_field_tag :user_name %><br>
+				  <%= label_tag :email %>:<br>
+				  <%= text_field_tag :user_email %><br>
+				  <%= label_tag :first_name %>:<br>
+				  <%= text_field_tag :f_name %><br>
+				  <%= label_tag :last_name %>:<br>
+				  <%= text_field_tag :l_name %><br>
+				  <%= label_tag :image_url %>:<br>
+				  <%= text_field_tag :user_profile_image %><br>
+				  <%= label_tag :password %>:<br>
+				  <%= password_field_tag :password %><br>	
+				  <%= label_tag :password_confirmation %>:<br>
+				  <%= password_field_tag :password_confirmation %><br>
+				  <%= submit_tag :confirm %><br><br>
+<% end %>

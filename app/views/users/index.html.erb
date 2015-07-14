@@ -1,10 +1,12 @@
 <h1> Travel Planner - TravelKit</h1>
 
-<nav>
-<span>Profile</span>
-<span>Past Travels</span>
-<span>Create Travel Plan</span>
-<span>Upload Expenses</span>
-</nav>
+<div class="navigation_container">
+<%= link_to "Profile", user_path(@user) %>
+<%= link_to "Past Travels", travel_plans_path %>
+<%= link_to "Create Travel Plan", new_travel_plan_path %>
+<%= link_to "Upload Expenses", new_travel_plan_path %>
+</div>
 <br>
+<div>
 <img></img>
+</div>

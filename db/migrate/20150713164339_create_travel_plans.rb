@@ -9,7 +9,6 @@ class CreateTravelPlans < ActiveRecord::Migration
     	t.references "users" 
     	t.datetime "start_date"
     	t.datetime "end_date"
-    	t.integer "total_estimated_cost"
     	t.timestamps
     end
   end
