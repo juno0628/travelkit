@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713202658) do
+ActiveRecord::Schema.define(version: 20150715161606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,20 +22,26 @@ ActiveRecord::Schema.define(version: 20150713202658) do
     t.datetime "updated_at"
   end
 
+  create_table "subcategories", force: :cascade do |t|
+    t.integer "category_id"
+    t.string  "subcategory_name"
+  end
+
   create_table "travel_plan_entries", force: :cascade do |t|
     t.integer  "travel_plan_id"
-    t.integer  "category_id"
+    t.integer  "subcategory_id"
     t.string   "notes"
     t.string   "expense_file"
     t.integer  "estimated_amount", default: 0
-    t.boolean  "expensed?",        default: false
+    t.boolean  "is_expensed",      default: false
+    t.datetime "expensed_date"
     t.integer  "actual_expense",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "travel_plans", force: :cascade do |t|
-    t.boolean  "international?",      default: false
+    t.boolean  "is_international",    default: false
     t.string   "destination_city"
     t.string   "destination_country"
     t.string   "departure_city"

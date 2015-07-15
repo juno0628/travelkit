@@ -1,5 +1,6 @@
-class Travel_plan_entry < ActiveRecord::Base
+class TravelPlanEntry < ActiveRecord::Base
 	belongs_to :travel_plan
+	has_one :subcategory
 end
 
 

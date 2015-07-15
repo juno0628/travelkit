@@ -1,5 +1,5 @@
-<h1>Travel Plans for <%= @user.user_name %></h1>
-<% @travelplans.each do |plan| %>
-	<% plan_name = plan.destination_city + ', ' +plan.destination_country + '(' + plan.start_date+'+' + '~' + plan.end_date + ')' %>
-	<%= link_to plan_name, travel_plan_path %> 
+<h1>Travel Plans for <%= @user.user_name.capitalize %></h1>
+<% @travelplans.each do |travel_plan| %>
+	<% travel_plan_name = travel_plan.destination_city + ', ' + travel_plan.destination_country  %>
+	<li><%= link_to "#{travel_plan_name}", "travel_plans/#{travel_plan.id}" %></li>
 <% end %>

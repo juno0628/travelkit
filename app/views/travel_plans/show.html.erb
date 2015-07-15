@@ -1,1 +1,13 @@
-show.html.erb
+
+<%# navagation bar #%>
+<h1>Travel Plan Show Page</h1>
+
+
+<div class = "navigation_bar">
+	<div> Total </div>
+<% @categories.each do |category| %>
+	<div> <%= category.category_name.capitalize %></div>
+<% end %>
+</div> 
+<div class = "travel-plan-container">
+</div>
