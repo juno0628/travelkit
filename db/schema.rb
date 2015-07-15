@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150713202658) do
   end
 
   create_table "travel_plan_entries", force: :cascade do |t|
-    t.integer  "travel_plans_id"
-    t.integer  "categories_id"
+    t.integer  "travel_plan_id"
+    t.integer  "category_id"
     t.string   "notes"
     t.string   "expense_file"
     t.integer  "estimated_amount", default: 0
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150713202658) do
     t.string   "destination_country"
     t.string   "departure_city"
     t.string   "departure_country"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at"

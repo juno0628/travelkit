@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/', to: 'sessions#new'
+
+  get '/index', to: 'users#index'
   resources :travel_plan_entries, :travel_plans, :users
 end

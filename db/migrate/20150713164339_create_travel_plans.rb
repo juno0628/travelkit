@@ -6,7 +6,7 @@ class CreateTravelPlans < ActiveRecord::Migration
         t.string "destination_country"
         t.string "departure_city"
         t.string "departure_country"
-    	t.references "users" 
+    	t.references "user" 
     	t.datetime "start_date"
     	t.datetime "end_date"
     	t.timestamps

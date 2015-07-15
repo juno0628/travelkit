@@ -1,0 +1,5 @@
+<h1>Travel Plans for <%= @user.user_name %></h1>
+<% @travelplans.each do |plan| %>
+	<% plan_name = plan.destination_city + ', ' +plan.destination_country + '(' + plan.start_date+'+' + '~' + plan.end_date + ')' %>
+	<%= link_to plan_name, travel_plan_path %> 
+<% end %>
