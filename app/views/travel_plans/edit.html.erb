@@ -1,17 +1,17 @@
-<h1>Travel Plan Edit Page</h1>
+<h1 class="travel-plan-edit">Travel Plan Edit Page</h1>
 
 <% if  @travelplan.is_international == false %>
 	<h3>Type: <%= "Domestic Trip" %></h3>
 
 <% elsif @travelplan.is_international == true %>
-	<h3>Type: <%= "Interational" %></h3>
+	<h3>Type: <%= "International" %></h3>
 <% end %>
 	<h3>Departure: <%= @travelplan.departure_city %> , <%= @travelplan.departure_country %></h3>
 	<h3>Destination: <%= @travelplan.destination_city %> , <%= @travelplan.destination_country %></h3>
 	<h3>Date: <%= @travelplan.start_date.to_date %> ~ <%= @travelplan.end_date.to_date %></h3>
 
 	<h3> Travel Plan Details: </h3><br>
-	<table>
+	<table class="travel-plan-detail">
 		<caption></caption>
 		<thead>
 			<tr>
@@ -27,16 +27,20 @@
 		</thead>
 		<tbody>
 		<% @entries.each do |entry| %>
-			<tr>
-				<td><input type="text" value="<%= Subcategory.find(entry.subcategory_id).subcategory_name %>"></input></td>
-				<td><input type="text" value="<%= entry.notes %>"></input></td>
-				<td><input type="text" value="<%= entry.estimated_amount %>"></input></td>
-				<td><input type="text" value="<%= entry.actual_expense %>"></input></td>
-				<td><input type="text" value="<%= entry.created_at.to_date %>"></input></td>
-				<td><input type="text" value="<%= entry.updated_at.to_date %>"></input></td>
-				<td> upload receipt</td>
-				<td><button>edit</button></td>
+			<tr name=>
+				<td><%= Subcategory.find(entry.subcategory_id).subcategory_name %></td>
+				<td><input type="text" id="entry-notes" value="<%= entry.notes %>"></input></td>
+				<td><input type="text" id="entry-estimated-amount" value="<%= entry.estimated_amount %>"></input></td>
+				<td><input type="text" id="entry-actual-expense" value="<%= entry.actual_expense %>"></input></td>
+				<td><%= entry.created_at.to_date %></td>
+				<td><%= entry.updated_at.to_date %></td>
+				<td><%= form_for @user do |f| %>
+  						<%= f.file_field :picture %>
+						<% end %>
+				</td>
+				<td>
+					<button class='travel-plan-page-update-button' id='<%=entry.id%>'>update</button></td>
 			</tr>
-		</tbody>
+		</tbody><tr><tr><tr><tr><tr>
 		<% end %>
-	</table><br></br>	
+	</table><br></br>

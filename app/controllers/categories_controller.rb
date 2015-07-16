@@ -13,7 +13,6 @@ class CategoriesController < ApplicationController
 			end
 		end
 		
-		binding.pry
 		render partial: 'show_category'
 	end
 end

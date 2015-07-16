@@ -5,8 +5,8 @@
 	<%# add options to each category #%>
 	<select name="travel_plan[is_international]" id="select_trip_type">
 			<option value="0">Select Trip Type</option>
-			<option value="1">International</option>
-			<option value="2">Domestic</option>
+			<option value="true">International</option>
+			<option value="false">Domestic</option>
 	</select><br><br>
 
 	<%# travel-plan - dates #%>
@@ -36,9 +36,9 @@
 			<%= subcategory.subcategory_name.capitalize %><br>
 		</div>
 		<% end %>
-	<% end %>
+	<% end %><br><br>
 
-	<input type="submit" value="Create Travel Plan">
+	<input type="submit" value="Create Travel Plan"><br><br>
 </form>
 
 

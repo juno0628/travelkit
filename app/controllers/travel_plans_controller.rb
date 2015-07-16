@@ -7,7 +7,6 @@ class TravelPlansController < ApplicationController
 	def index
 		@user = User.find(current_user.id)
 		@travelplans = TravelPlan.where(user_id: @user.id)
-		binding.pry
 	end
 
 	def show
@@ -37,7 +36,7 @@ class TravelPlansController < ApplicationController
 
 	def edit 
 		@travelplan = TravelPlan.find(params[:id])
-		binding.pry
+		@user = current_user
 		@entries = @travelplan.travel_plan_entry
 	end
 
@@ -45,6 +44,20 @@ class TravelPlansController < ApplicationController
 	end
 
 	def destroy
+	end
+
+	def expense_index
+		@user = User.find(current_user.id)
+		@travelplans = TravelPlan.where(user_id: @user.id)
+		
+		render 'upload_expense_index'
+	end
+
+	def upload
+  uploaded_io = params[:user][:picture]
+	  File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+	    file.write(uploaded_io.read)
+	  end
 	end
 
 	private

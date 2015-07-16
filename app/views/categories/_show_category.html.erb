@@ -18,32 +18,19 @@
 				<th>actual expense</th>
 				<th>created</th>
 				<th>updated</th>
-				<th>upload receipt</th>
-				<th>edit entry</th>
 			</tr>
 		</thead>
-			<% if @entries = [] %>
-				<tbody>
-					<tr>	
-					<td></td>
-					<td><%= "No Entry Found" %></td>
-					</tr>
-				</tbody>
-			<% else %>
 				<tbody>
 				<% @entries.each do |entry| %>
 					<tr>
-						<td><input type="text" value="<%= Subcategory.find(entry[0].subcategory_id).subcategory_name %>"></input></td>
-						<td><input type="text" value="<%= entry[0].notes %>"></input></td>
-						<td><input type="text" value="<%= entry[0].estimated_amount %>"></input></td>
-						<td><input type="text" value="<%= entry[0].actual_expense %>"></input></td>
-						<td><input type="text" value="<%= entry[0].created_at.to_date %>"></input></td>
-						<td><input type="text" value="<%= entry[0].updated_at.to_date %>"></input></td>
-						<td> upload receipt</td>
-						<td><button>edit</button></td>
+						<td><%= Subcategory.find(entry[0].subcategory_id).subcategory_name %></td>
+						<td><%= entry[0].notes %></td>
+						<td><%= entry[0].estimated_amount %></td>
+						<td><%= entry[0].actual_expense %></td>
+						<td><%= entry[0].created_at.to_date %></td>
+						<td><%= entry[0].updated_at.to_date %></td>
 					</tr>
 				</tbody>
 			<% end %>
-		<% end %>
 
 

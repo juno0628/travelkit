@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require mustache
+//= require travel-plan-edit
+//= require travel-plan-entries-edit

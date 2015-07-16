@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/', to: 'sessions#new'
 
+  get '/expense_index', to: 'travel_plans#expense_index'
+
   get '/index', to: 'users#index'
   resources :travel_plan_entries, :travel_plans, :users
 
