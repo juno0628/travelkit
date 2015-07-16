@@ -4,7 +4,6 @@ class CreateTravelPlanEntries < ActiveRecord::Migration
     	t.references "travel_plan"
     	t.references "subcategory"
         t.string "notes"
-        t.string "expense_file"
     	t.integer "estimated_amount", default: 0
         t.boolean "is_expensed", default: false
         t.datetime "expensed_date"

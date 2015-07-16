@@ -34,8 +34,8 @@
 				<td><input type="text" id="entry-actual-expense" value="<%= entry.actual_expense %>"></input></td>
 				<td><%= entry.created_at.to_date %></td>
 				<td><%= entry.updated_at.to_date %></td>
-				<td><%= form_for @user do |f| %>
-  						<%= f.file_field :picture %>
+				<td><%= form_for(entry, multipart: true) do |f| %>
+  						<%= f.file_field :expense_file %>
 						<% end %>
 				</td>
 				<td>
