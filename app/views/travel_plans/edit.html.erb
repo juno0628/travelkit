@@ -28,18 +28,19 @@
 		<tbody>
 		<% @entries.each do |entry| %>
 			<tr name=>
+				<%= form_for(entry, multipart: true) do |f| %>
 				<td><%= Subcategory.find(entry.subcategory_id).subcategory_name %></td>
-				<td><input type="text" id="entry-notes" value="<%= entry.notes %>"></input></td>
-				<td><input type="text" id="entry-estimated-amount" value="<%= entry.estimated_amount %>"></input></td>
-				<td><input type="text" id="entry-actual-expense" value="<%= entry.actual_expense %>"></input></td>
+				<td><%= f.text_field :notes %></td>
+				<td><%= f.text_field :estimated_amount %></td>
+				<td><%= f.text_field :actual_expense %></td>
 				<td><%= entry.created_at.to_date %></td>
 				<td><%= entry.updated_at.to_date %></td>
-				<td><%= form_for(entry, multipart: true) do |f| %>
-  						<%= f.file_field :expense_file %>
-						<% end %>
+				<td id="entry-expense-file">
+  					<%= f.file_field :expense_file %>
 				</td>
 				<td>
-					<button class='travel-plan-page-update-button' id='<%=entry.id%>'>update</button></td>
+					<%= f.submit 'Update' %>
+   			<% end %>
 			</tr>
 		</tbody><tr><tr><tr><tr><tr>
 		<% end %>

@@ -8,7 +8,9 @@ $(document).ready(function() {
 		var note = $(this).closest('tr').find('#entry-notes').val();
 		var amt = $(this).closest('tr').find('#entry-estimated-amount').val();
 		var exp = $(this).closest('tr').find('#entry-actual-expense').val();
-		var receipt = $(this).closest('tr').find('#entry-expense-file').val();
+		var reader  = new FileReader();
+		debugger;
+		var receipt = reader.readAsText($(this).closest('tr').find('#entry-expense-file'));
 		//sending AJAX request to update travel-plan-entries
 		$.ajax({
 			url: url,
@@ -26,6 +28,7 @@ $(document).ready(function() {
 			entry.find('#entry-notes').val(result.notes);
 			entry.find('#entry-estimated-amount').val(result.estimated_amount);
 			entry.find('#entry-actual-expense').val(result.actual_expense);
+			entry.fiind('#entry-expense-file').text(result.expense_file);
 		})
 	})
 });
