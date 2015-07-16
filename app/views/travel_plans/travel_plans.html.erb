@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TravelPlanner</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1> travel plans layout </h1>
+<div class = "navigation_bar">
+	<div> Total </div>
+<% @categories.each do |category| %>
+	<div> <%= category.category_name.capitalize %></div>
+<% end %>
+</div> 
+<div class = "travel-plan-container">
+<%= yield %>
+</div>
+
+
+</body>
+</html>

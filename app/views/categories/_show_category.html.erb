@@ -1,0 +1,49 @@
+<h1><%= @category.category_name.capitalize %></h1>
+
+<div> 
+	Total Estimated: <%= @total_estimated %>
+</div>
+<div> 
+	Total Expenses: <%= @total_expense %>
+</div>
+
+		<h3> Details: </h3><br>
+	<table>
+		<caption></caption>
+		<thead>
+			<tr>
+				<th>category</th>
+				<th>notes</th>
+				<th>estimated amt</th>
+				<th>actual expense</th>
+				<th>created</th>
+				<th>updated</th>
+				<th>upload receipt</th>
+				<th>edit entry</th>
+			</tr>
+		</thead>
+			<% if @entries = [] %>
+				<tbody>
+					<tr>	
+					<td></td>
+					<td><%= "No Entry Found" %></td>
+					</tr>
+				</tbody>
+			<% else %>
+				<tbody>
+				<% @entries.each do |entry| %>
+					<tr>
+						<td><input type="text" value="<%= Subcategory.find(entry[0].subcategory_id).subcategory_name %>"></input></td>
+						<td><input type="text" value="<%= entry[0].notes %>"></input></td>
+						<td><input type="text" value="<%= entry[0].estimated_amount %>"></input></td>
+						<td><input type="text" value="<%= entry[0].actual_expense %>"></input></td>
+						<td><input type="text" value="<%= entry[0].created_at.to_date %>"></input></td>
+						<td><input type="text" value="<%= entry[0].updated_at.to_date %>"></input></td>
+						<td> upload receipt</td>
+						<td><button>edit</button></td>
+					</tr>
+				</tbody>
+			<% end %>
+		<% end %>
+
+

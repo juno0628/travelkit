@@ -1,13 +1,34 @@
 
 <%# navagation bar #%>
-<h1>Travel Plan Show Page</h1>
+<h1 class="travel-show-page-title" id="<%=@travelplan.id%>" >Travel Plan Show Page</h1>
 
 
 <div class = "navigation_bar">
-	<div> Total </div>
+	<div class = "show-category" id ="total"> Total Tab </div>
 <% @categories.each do |category| %>
-	<div> <%= category.category_name.capitalize %></div>
+	<div class = "show-category" id = "<%=category.id%>"> <%= category.category_name.capitalize %> Tab</div>
 <% end %>
 </div> 
 <div class = "travel-plan-container">
 </div>
+<script>
+	$('.show-category').on('click', function() {
+		console.log('clicked');
+		if ($(this).attr('id') != "total") {
+			// sending AJAX to retrieve 
+			var categoryId = $(this).attr('id');
+			var planId =  $('.travel-show-page-title').attr('id');
+			var url = '/travel_plans/'+ planId + '/categories/' + categoryId;
+
+			$.ajax({
+				url: url,
+				type: 'get'
+			}).done(function(data) {
+					console.log(data);
+					console.log('data received from server');
+					$('.travel-plan-container').html(data);
+			})
+		}
+	})
+
+</script>
