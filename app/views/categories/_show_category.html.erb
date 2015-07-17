@@ -1,13 +1,13 @@
-<h1><%= @category.category_name.capitalize %></h1>
+<div class="panel panel-success">
+<h1 class="panel-heading"><%= @category.category_name.capitalize %></h1>
+	<div> 
+		Total Estimated: <%= @total_estimated %>
+	</div>
+	<div> 
+		Total Expenses: <%= @total_expense %>
+	</div>
 
-<div> 
-	Total Estimated: <%= @total_estimated %>
-</div>
-<div> 
-	Total Expenses: <%= @total_expense %>
-</div>
-
-		<h3> Details: </h3><br>
+	<h3> Details: </h3><br>
 	<table class="table table-striped">
 		<caption></caption>
 		<thead>
@@ -32,5 +32,5 @@
 					</tr>
 				</tbody>
 				<% end %>
-
+</div>
 

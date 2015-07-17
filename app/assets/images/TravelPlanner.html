@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://localhost:3000/travel_plans/new -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>TravelPlanner</title>
+  <link rel="stylesheet" media="all" href="http://localhost:3000/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/stylesheet.self-441d0cb0c8a4df0f4b72d50df70a47da517507acd42dc9bace80c191c8e714ba.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/travel_expense_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/travel_plan_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/travel_plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="http://localhost:3000/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" data-turbolinks-track="true">
+  <script src="./TravelPlanner_files/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js" data-turbolinks-track="true"></script>
+<script src="./TravelPlanner_files/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js" data-turbolinks-track="true"></script>
+<script src="./TravelPlanner_files/mustache.self-4aa7f9ca789e4a84d01304ffe370c37536abb81a1b949efb5f9fbdac946fc3a0.js" data-turbolinks-track="true"></script>
+<script src="./TravelPlanner_files/travel-plan-edit.self-8cd00c99c5ff0f10edc244b49014c69b4a8c4614bcba45f6e404c494b1bd7800.js" data-turbolinks-track="true"></script>
+<script src="./TravelPlanner_files/travel-plan-entries-edit.self-7223fc85d596512670cbe1df580b918d163f3f1ef5b38e72d157968d9681f3a3.js" data-turbolinks-track="true"></script>
+<script src="./TravelPlanner_files/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js" data-turbolinks-track="true"></script>
+<script src="./TravelPlanner_files/application.self-b870f4765c2fcbf8cabec8478e3e32aa02ac855d9f609c451d170b187ee785a3.js" data-turbolinks-track="true"></script>
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="D3ZiqAYlkJlr6oSKlQEGz5w3X6e9aYFBG2kAc93PtsK1L+j8TSW3wyO4scjiELsjYIcFkZ/S3IggaeiYV4FkRw==">
+</head>
+<body>
+
+<div id="yield-page">
+	<a href="http://localhost:3000/index">Go to Homepage</a>
+	<h1>New Travel Plan</h1>
+
+<div class="new-travel-plan-container">
+	<form action="http://localhost:3000/travel_plans" method="post">
+		<input name="authenticity_token" value="D3ZiqAYlkJlr6oSKlQEGz5w3X6e9aYFBG2kAc93PtsK1L+j8TSW3wyO4scjiELsjYIcFkZ/S3IggaeiYV4FkRw==" type="hidden">
+		<select name="travel_plan[is_international]" id="select_trip_type">
+				<option value="0">Select Trip Type</option>
+				<option value="true">International</option>
+				<option value="false">Domestic</option>
+		</select><br><br>
+
+		<label>Start-Date</label>
+		<input type="date" name="travel_plan[start_date]"><br>
+		<label>End-Date</label>
+		<input type="date" name="travel_plan[end_date]"><br><br>
+
+		<label>Departure-City</label>
+		<input type="text" name="travel_plan[departure_city]"><br>
+		<label>Departure-Country</label>
+		<input type="text" name="travel_plan[departure_country]"><br><br>
+		<label>Destination-City</label>
+		<input type="text" name="travel_plan[destination_city]"><br>
+		<label>Destination-Country</label>
+		<input type="text" name="travel_plan[destination_country]"><br><br>
+
+			<div class="panel panel-info category-1">
+			<h2 class="panel-heading">Transportation</h2>
+			 <input type="checkbox" name="subcategories[]" value="1">
+				Flight<br>
+			 <input type="checkbox" name="subcategories[]" value="2">
+				Cruise<br>
+			 <input type="checkbox" name="subcategories[]" value="3">
+				Car rental<br>
+			 <input type="checkbox" name="subcategories[]" value="4">
+				Bus<br>
+			 <input type="checkbox" name="subcategories[]" value="5">
+				Train<br>
+			<div class="panel panel-info category-2">
+			<h2 class="panel-heading">Lodging</h2>
+			 <input type="checkbox" name="subcategories[]" value="6">
+				Hotel<br>
+			 <input type="checkbox" name="subcategories[]" value="7">
+				Inn<br>
+			 <input type="checkbox" name="subcategories[]" value="8">
+				Residence<br>
+			 <input type="checkbox" name="subcategories[]" value="9">
+				Airbnb<br>
+			 <input type="checkbox" name="subcategories[]" value="10">
+				Condo<br>
+			 <input type="checkbox" name="subcategories[]" value="11">
+				Lodge<br>
+			<div class="panel panel-info category-3">
+			<h2 class="panel-heading">Food</h2>
+			 <input type="checkbox" name="subcategories[]" value="12">
+				Breakfast<br>
+			 <input type="checkbox" name="subcategories[]" value="13">
+				Brunch<br>
+			 <input type="checkbox" name="subcategories[]" value="14">
+				Lunch<br>
+			 <input type="checkbox" name="subcategories[]" value="15">
+				Dinner<br>
+			 <input type="checkbox" name="subcategories[]" value="16">
+				Drink<br>
+			 <input type="checkbox" name="subcategories[]" value="17">
+				Snackfood<br>
+			<div class="panel panel-info category-4">
+			<h2 class="panel-heading">Attraction</h2>
+			 <input type="checkbox" name="subcategories[]" value="18">
+				Museum<br>
+			 <input type="checkbox" name="subcategories[]" value="19">
+				Amusement park<br>
+			 <input type="checkbox" name="subcategories[]" value="20">
+				Zoo<br>
+			 <input type="checkbox" name="subcategories[]" value="21">
+				Observation deck<br>
+		<br><br>
+
+		<input class="btn btn-primary btn-lg" type="submit" value="Create Travel Plan"><br><br>
+	
+</div>
+
+
+
+</div>
+
+
+
+</div></div></form></div></div></body></html>

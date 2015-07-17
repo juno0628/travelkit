@@ -1,5 +1,6 @@
 body {
 	background-color: blue;
+	background-image: url('cloud-icon-png-cloud.png');
 }
 
 #yield-page {
@@ -65,4 +66,24 @@ td {
 .carousel-pic {
 	height: 200px;
 }
+
+
+.panel.panel-info {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+	border-top: 0;
+	border-style: solid;
+}
+
+.panel-body {
+	border: 0;
+	border-style: solid;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 7px;
+	padding-left: 10px;
+	border-top: 0;
+}
+
 

@@ -4,7 +4,7 @@
 	<form action="/travel_plans" method="post">
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 		<%# add options to each category #%>
-		<select name="travel_plan[is_international]" id="select_trip_type">
+		<select class="form-control" name="travel_plan[is_international]" id="select_trip_type">
 				<option value="0">Select Trip Type</option>
 				<option value="true">International</option>
 				<option value="false">Domestic</option>
@@ -29,16 +29,16 @@
 		<%# travel-plan - entries #%>
 		<% @categories.each do |category| %>
 			<% subcategories = category.subcategory %>
-			<div class="category-<%= category.id %>">
-			<h2><%= category.category_name.capitalize %><br></h2>
+			<div class="panel panel-info category-<%= category.id %>">
+			<h2 class="panel-heading"><%= category.category_name.capitalize %></h2>
 				<% subcategories.each do |subcategory| %>
-				<input type="checkbox" name="subcategories[]" value="<%= subcategory.id %>">
-				<%= subcategory.subcategory_name.capitalize %><br>
+			 <div class="panel-body"><input type="checkbox" name="subcategories[]" value="<%= subcategory.id %>">
+				<%= subcategory.subcategory_name.capitalize %><br></div>
 			<% end %>
 		<% end %>
 		<br><br>
 
-		<input class="btn btn-primary btn-md" type="submit" value="Create Travel Plan"><br><br>
+		<input class="btn btn-primary btn-lg" type="submit" value="Create Travel Plan"><br><br>
 	</form>
 </div>
 
