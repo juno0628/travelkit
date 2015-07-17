@@ -6,13 +6,11 @@ class SessionsController < ApplicationController
 
   #creates a session
   def create
-    binding.pry
     user = User.find_by({user_name: params[:user_name]})
     if user && user.authenticate(params[:password])    
       session[:user_id] = user.id
       session[:user_name] = user.user_name
       session[:user_fullname] = "#{user.f_name} #{user.l_name}"
-      binding.pry
       redirect_to "/index" #user index page
     else
       # rerender the form
