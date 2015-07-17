@@ -77,17 +77,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-
-  configure :production do
-      require 'uri'
-      uri = URI.parse ENV["DATABASE_URL"]
-      $db = PG.connect dbname: uri.path[1..-1],
-                         host: uri.host,
-                         port: uri.port,
-                         user: uri.user,
-                     password: uri.password
-    end
-
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
