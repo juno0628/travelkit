@@ -15,3 +15,4 @@
 //= require mustache
 //= require travel-plan-edit
 //= require travel-plan-entries-edit
+//= require_tree .

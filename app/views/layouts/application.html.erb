@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<%= yield %>
+<div id='yield-page'>
+	<%= link_to 'Go to Homepage', '/index' %>
+	<%= yield %>
+</div>
 
-<%= link_to 'Go to Homepage', '/index' %>
 </body>
 </html>

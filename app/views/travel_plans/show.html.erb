@@ -1,13 +1,15 @@
 
 <%# navagation bar #%>
-<h1 class="travel-show-page-title" id="<%=@travelplan.id%>" >Travel Plan Show Page</h1>
+<h3 class="travel-show-page-title" id="<%=@travelplan.id%>" >Travel Plan Show Page</h3>
 
 
 <div class = "navigation_bar">
-	<div class = "show-category" id ="total"> Total Tab </div>
+	<div class = "show-category" id ="total"><button class="tab-class-button">Total Tab</button></div>
 <% @categories.each do |category| %>
-	<div class = "show-category" id = "<%=category.id%>"> <%= category.category_name.capitalize %> Tab</div>
+	<div class = "show-category" id = "<%=category.id%>"> <button class="tab-class-button"><%= category.category_name.capitalize %> Tab</button></div>
 <% end %>
-</div> 
-<div class = "travel-plan-container">
+</div>
+<div id="travel-plan-result-show"> 
+	<div class = "travel-plan-container">
+	</div>
 </div>

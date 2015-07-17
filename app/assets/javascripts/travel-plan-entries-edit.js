@@ -8,9 +8,6 @@ $(document).ready(function() {
 		var note = $(this).closest('tr').find('#entry-notes').val();
 		var amt = $(this).closest('tr').find('#entry-estimated-amount').val();
 		var exp = $(this).closest('tr').find('#entry-actual-expense').val();
-		var reader  = new FileReader();
-		debugger;
-		var receipt = reader.readAsText($(this).closest('tr').find('#entry-expense-file'));
 		//sending AJAX request to update travel-plan-entries
 		$.ajax({
 			url: url,
@@ -20,7 +17,6 @@ $(document).ready(function() {
 					notes: note,
 					estimated_amount: amt,
 					actual_expense: exp,
-					expense_file: receipt
 				}
 			}
 		//after updating database, parse to browser

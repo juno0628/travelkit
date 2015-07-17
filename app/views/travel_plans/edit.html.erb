@@ -21,26 +21,20 @@
 				<th>actual expense</th>
 				<th>created</th>
 				<th>updated</th>
-				<th>upload receipt</th>
 				<th>edit entry</th>
 			</tr>
 		</thead>
 		<tbody>
 		<% @entries.each do |entry| %>
 			<tr name=>
-				<%= form_for(entry, multipart: true) do |f| %>
-				<td><%= Subcategory.find(entry.subcategory_id).subcategory_name %></td>
-				<td><%= f.text_field :notes %></td>
-				<td><%= f.text_field :estimated_amount %></td>
-				<td><%= f.text_field :actual_expense %></td>
+				<td><%= Subcategory.find(entry.subcategory_id).subcategory_name.capitalize %></td>
+				<td><input type="text" id="entry-notes" value="<%= entry.notes %>"></input></td>
+				<td><input type="text" id="entry-estimated-amount" value="<%= entry.estimated_amount %>"></input></td>
+				<td><input type="text" id="entry-actual-expense" value="<%= entry.actual_expense %>"></input></td>
 				<td><%= entry.created_at.to_date %></td>
 				<td><%= entry.updated_at.to_date %></td>
-				<td id="entry-expense-file">
-  					<%= f.file_field :expense_file %>
-				</td>
 				<td>
-					<%= f.submit 'Update' %>
-   			<% end %>
+					<button class='travel-plan-page-update-button' id='<%=entry.id%>'>update</button></td>
 			</tr>
 		</tbody><tr><tr><tr><tr><tr>
 		<% end %>

@@ -1,44 +1,47 @@
 <h1>New Travel Plan</h1>
 
-<form action="/travel_plans" method="post">
-	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-	<%# add options to each category #%>
-	<select name="travel_plan[is_international]" id="select_trip_type">
-			<option value="0">Select Trip Type</option>
-			<option value="true">International</option>
-			<option value="false">Domestic</option>
-	</select><br><br>
+<div>
+	<form action="/travel_plans" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<%# add options to each category #%>
+		<select name="travel_plan[is_international]" id="select_trip_type">
+				<option value="0">Select Trip Type</option>
+				<option value="true">International</option>
+				<option value="false">Domestic</option>
+		</select><br><br>
 
-	<%# travel-plan - dates #%>
-	<label>Start-Date</label>
-	<input type="date" name="travel_plan[start_date]"><br>
-	<label>End-Date</label>
-	<input type="date" name="travel_plan[end_date]"><br><br>
+		<%# travel-plan - dates #%>
+		<label>Start-Date</label>
+		<input type="date" name="travel_plan[start_date]"><br>
+		<label>End-Date</label>
+		<input type="date" name="travel_plan[end_date]"><br><br>
 
-	<%# travel-plan - cities #%>
-	<label>Departure-City</label>
-	<input type="text" name="travel_plan[departure_city]"><br>
-	<label>Departure-Country</label>
-	<input type="text" name="travel_plan[departure_country]"><br><br>
-	<label>Destination-City</label>
-	<input type="text" name="travel_plan[destination_city]"><br>
-	<label>Destination-Country</label>
-	<input type="text" name="travel_plan[destination_country]"><br><br>
+		<%# travel-plan - cities #%>
+		<label>Departure-City</label>
+		<input type="text" name="travel_plan[departure_city]"><br>
+		<label>Departure-Country</label>
+		<input type="text" name="travel_plan[departure_country]"><br><br>
+		<label>Destination-City</label>
+		<input type="text" name="travel_plan[destination_city]"><br>
+		<label>Destination-Country</label>
+		<input type="text" name="travel_plan[destination_country]"><br><br>
 
-	<%# travel-plan - entries #%>
-
-	<% @categories.each do |category| %>
-		<% subcategories = category.subcategory %>
-		<div class="category-<%= category.id %>">
-		<h2><%= category.category_name.capitalize %><br></h2>
-			<% subcategories.each do |subcategory| %>
-			<input type="checkbox" name="subcategories[]" value="<%= subcategory.id %>">
-			<%= subcategory.subcategory_name.capitalize %><br>
-		</div>
+		<%# travel-plan - entries #%>
+		<div>
+		<% @categories.each do |category| %>
+			<% subcategories = category.subcategory %>
+			<div class="category-<%= category.id %>">
+			<h2><%= category.category_name.capitalize %><br></h2>
+				<% subcategories.each do |subcategory| %>
+				<input type="checkbox" name="subcategories[]" value="<%= subcategory.id %>">
+				<%= subcategory.subcategory_name.capitalize %><br>
+			</div>
+			<% end %>
 		<% end %>
-	<% end %><br><br>
+		</div><br><br>
 
-	<input type="submit" value="Create Travel Plan"><br><br>
-</form>
+		<input type="submit" value="Create Travel Plan"><br><br>
+	</form>
+</div>
 
 
