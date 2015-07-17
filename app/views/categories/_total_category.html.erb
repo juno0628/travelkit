@@ -1,0 +1,30 @@
+<div class="panel panel-success">
+<h1 class="panel-heading">Total</h1>
+	<div> 
+		Total Estimated: <%= @total_estimated %>
+	</div>
+	<div> 
+		Total Expenses: <%= @total_expense %>
+	</div>
+
+	<h3> Details: </h3><br>
+	<table class="table table-striped">
+		<caption></caption>
+		<thead>
+			<tr>
+				<th>category</th>
+				<th>estimated amt</th>
+				<th>actual expense</th>
+			</tr>
+		</thead>
+				<tbody>
+				<% @categories.each do |cat| %>
+					<tr>
+						<td><%= cat.category_name %></td>
+						<td><%= @amount[cat.id] %></td>
+						<td><%= @expense[cat.id] %></td>
+					</tr>
+				</tbody>
+				<% end %>
+</div>
+

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/expense_index', to: 'travel_plans#expense_index'
 
   get '/index', to: 'users#index'
+
+  get '/category/total_report', to: 'categories#total_report'
+
   resources :travel_plan_entries, :travel_plans, :users
 
   resources :travel_plans do 

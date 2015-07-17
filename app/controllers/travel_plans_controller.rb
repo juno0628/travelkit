@@ -25,10 +25,13 @@ class TravelPlansController < ApplicationController
 		@travelplan = TravelPlan.new(travel_plan_params)
 		@travelplan.user_id = current_user.id
 		@travelplan.save
+		binding.pry
 		# associate travelplaneentries with the subcategories
 		params["subcategories"].each do |sub|
+			cat = Subcategory.find(sub).category_id
 			TravelPlanEntry.create({
-				travel_plan_id: @travelplan.id, subcategory_id: sub
+				travel_plan_id: @travelplan.id, subcategory_id: sub,
+					category_id: cat
 			})	
 		end
 		redirect_to "/travel_plans/#{@travelplan.id}/edit"

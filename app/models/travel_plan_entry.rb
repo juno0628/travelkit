@@ -1,6 +1,7 @@
 class TravelPlanEntry < ActiveRecord::Base
 	belongs_to :travel_plan
 	has_one :subcategory
+	has_one :category
 
 	 has_attached_file :expense_file, styles: {
     thumb: '100x100>',

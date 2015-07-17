@@ -3,6 +3,7 @@ class CreateTravelPlanEntries < ActiveRecord::Migration
     create_table :travel_plan_entries do |t|
     	t.references "travel_plan"
     	t.references "subcategory"
+        t.references "category"
         t.string "notes"
     	t.integer "estimated_amount", default: 0
         t.boolean "is_expensed", default: false

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 		$('.show-category').on('click', function() {
 		console.log('clicked');
 		if ($(this).attr('id') != "total") {
@@ -16,6 +16,20 @@ $(document).ready(function(){
 					console.log('data received from server');
 					$('.travel-plan-container').html(data);
 			})
+		} else if ($(this).attr('id') == "total") {
+				var planId =  $('.travel-show-page-title').attr('id');
+				var url = '/category/total_report';
+				$.ajax({
+					url: url, 
+					type: 'get',
+					data: {
+						id: planId
+					}
+				}).done(function(data) {
+					console.log(data);
+					console.log('data received from server');
+					$('.travel-plan-container').html(data);
+				})
 		}
 	})
 });

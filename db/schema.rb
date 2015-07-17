@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150717012909) do
   create_table "travel_plan_entries", force: :cascade do |t|
     t.integer  "travel_plan_id"
     t.integer  "subcategory_id"
+    t.integer  "category_id"
     t.string   "notes"
     t.integer  "estimated_amount",          default: 0
     t.boolean  "is_expensed",               default: false
