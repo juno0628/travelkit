@@ -25,7 +25,6 @@ class TravelPlansController < ApplicationController
 		@travelplan = TravelPlan.new(travel_plan_params)
 		@travelplan.user_id = current_user.id
 		@travelplan.save
-		binding.pry
 		# associate travelplaneentries with the subcategories
 		params["subcategories"].each do |sub|
 			cat = Subcategory.find(sub).category_id
