@@ -4,9 +4,9 @@
 
 
 <div class = "navigation_bar">
-	<div class = "show-category" id ="total"><button class="tab-class-button">Total Tab</button></div>
+	<div class = "show-category" id ="total"><button class="tab-class-button btn btn-primary btn-md btn-info">Total Tab</button></div>
 <% @categories.each do |category| %>
-	<div class = "show-category" id = "<%=category.id%>"> <button class="tab-class-button"><%= category.category_name.capitalize %> Tab</button></div>
+	<div class = "show-category" id = "<%=category.id%>"> <button class="tab-class-button btn btn-primary btn-md btn-info"><%= category.category_name.capitalize %> Tab</button></div>
 <% end %>
 </div>
 <div id="travel-plan-result-show"> 

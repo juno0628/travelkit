@@ -1,12 +1,39 @@
 <h1> Travel Planner - TravelKit</h1>
 
-<div class="navigation_container">
-<span><%= link_to "Profile", user_path(@user) %></span>
-<span><%= link_to "Past Travels", travel_plans_path %></span>
-<span><%= link_to "Create Travel Plan", new_travel_plan_path %></span>
-<span><%= link_to "Upload Expenses", '/expense_index' %></span>
-</div>
+<nav class="navigation_container">
+<span><button class='col-md-3'><%= link_to "Profile", user_path(@user) %></button></span>
+<span><button class='col-md-3'><%= link_to "Past Travels", travel_plans_path %></button></span>
+<span><button class='col-md-3'><%= link_to "Create Travel Plan", new_travel_plan_path %></button></span>
+<span><button class='col-md-3'><%= link_to "Upload Expenses", '/expense_index' %></button></span>
+</nav>
 <br>
 <div>
 <img></img>
 </div>
+<div id="carousel-picture-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-picture-generic" data-slide-to="0" class=""></li>
+          <li data-target="#carousel-picture-generic" data-slide-to="1" class="active"></li>
+          <li data-target="#carousel-picture-generic" data-slide-to="2" class=""></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item">
+            <img class="carousel-pic" src="http://topwalls.net/wallpapers/2012/06/Arizona-Grand-Canyon-960x1280.jpg" data-holder-rendered="true">
+          </div>
+          <div class="item active">
+            <img class="carousel-pic" src="http://www.hdwpapers.com/download/makena_maui_hawaii_wallpaper-1280x960.jpg" data-holder-rendered="true">
+          </div>
+          <div class="item">
+            <img class="carousel-pic" src="http://upload.wikimedia.org/wikipedia/commons/6/6a/MohonkHouse.jpg" data-holder-rendered="true">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-picture-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-picture-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      

@@ -1,6 +1,6 @@
 <h1>New Travel Plan</h1>
 
-<div>
+<div class="new-travel-plan-container">
 	<form action="/travel_plans" method="post">
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 		<%# add options to each category #%>
@@ -27,7 +27,6 @@
 		<input type="text" name="travel_plan[destination_country]"><br><br>
 
 		<%# travel-plan - entries #%>
-		<div>
 		<% @categories.each do |category| %>
 			<% subcategories = category.subcategory %>
 			<div class="category-<%= category.id %>">
@@ -35,12 +34,11 @@
 				<% subcategories.each do |subcategory| %>
 				<input type="checkbox" name="subcategories[]" value="<%= subcategory.id %>">
 				<%= subcategory.subcategory_name.capitalize %><br>
-			</div>
 			<% end %>
 		<% end %>
-		</div><br><br>
+		<br><br>
 
-		<input type="submit" value="Create Travel Plan"><br><br>
+		<input class="btn btn-primary btn-md" type="submit" value="Create Travel Plan"><br><br>
 	</form>
 </div>
 
