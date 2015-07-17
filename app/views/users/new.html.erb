@@ -1,6 +1,6 @@
 
 <h1> New User Sign Up Page </h1>
-<h3> Please fill in all required information </h3>
+<h3> Please fill in all the required information </h3>
 
 <%= form_tag users_path, method: 'post', :class => 'sign_up_form' do %>
 					<%= label_tag :username %>:<br>
@@ -16,6 +16,6 @@
 				  <%= label_tag :password %>:<br>
 				  <%= password_field_tag :password %><br>	
 				  <%= label_tag :password_confirmation %>:<br>
-				  <%= password_field_tag :password_confirmation %><br>
-				  <%= submit_tag :confirm %><br><br>
+				  <%= password_field_tag :password_confirmation %><br><br>
+				  <%= submit_tag :confirm, :class => 'btn btn-primary btn-md' %><br><br>
 <% end %>
