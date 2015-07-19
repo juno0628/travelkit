@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   	resources :categories 
   end
 
+  resources :travel_plans do 
+    resources :travel_plan_entries
+  end
+
 end

@@ -4,12 +4,11 @@ class TravelPlanEntry < ActiveRecord::Base
 	has_one :category
 
 	 has_attached_file :expense_file, styles: {
-    thumb: '100x100>',
-    square: '200x200#',
-    medium: '500x500>'
-  }
+    medium: '300x300>',
+    thumb: '100x100>'  
+  }, :default_url => ""
 	# Validate the attached image is image/jpg, image/png, etc
-  	validates_attachment_content_type :expense_file, :content_type => /\Aimage\/.*\Z/
+  	validates_attachment_content_type :expense_file, :content_type => /\Aimage\/.*\z/
 end
 
 

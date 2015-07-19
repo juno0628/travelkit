@@ -6,6 +6,14 @@ class TravelPlanEntriesController < ApplicationController
 		redirect_to "/travel_plans/#{plan_id}/edit"
 	end
 
+	def edit 
+		@entry = TravelPlanEntry.find(params[:id])
+	end
+
+	def show
+		@entry = TravelPlanEntry.find(params[:id])
+	end
+
 	private
 
 	def travel_plan_entry_params

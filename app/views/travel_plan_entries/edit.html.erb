@@ -1,0 +1,7 @@
+				
+<br><br>
+<div class="panel panel-success">
+<h1 class="panel-heading"> Receipt Upload Page </h1>
+	<div class= "panel-body" id="entry-expense-file"><%= form_for @entry, :url => "/travel_plan_entries/#{@entry.id}", :html => { :multipart => true } do |form| %> <%= form.file_field :expense_file, :class => 'col-md-6' %><br><br>
+					<%= form.submit 'upload file', :class => 'col-md-6' %><% end %>
+	</div> 

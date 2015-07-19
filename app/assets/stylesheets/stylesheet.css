@@ -6,8 +6,8 @@ body {
 #yield-page {
 	padding: 2%;
 	position: absolute;
-	left: 15%;
-	right: 20%;
+	left: 10%;
+	right: 10%;
 	height: 1800px;
 	background-color: white;
 }
@@ -85,5 +85,4 @@ td {
 	padding-left: 10px;
 	border-top: 0;
 }
-
 

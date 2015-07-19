@@ -20,6 +20,9 @@ user1 = User.create({user_name: "junho", user_email: "junho@gmail.com", f_name: 
 
 user2 = User.create({user_name: "guest", user_email: "guest@example.com", f_name: "guest", l_name: "guest", user_profile_image: "http://i.ytimg.com/vi/qIjXYiyx6SY/maxresdefault.jpg", password: "password", password_confirmation: "password"})
 
+user3 = User.create({user_name: "guest1", user_email: "guest1@example.com", f_name: "guest1", l_name: "guest", user_profile_image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTI6rjxsSvJ5_HeACCreH9oAkLEHumy6124cUM4bY8t4bYUzTACcjUwcrY", password: "guest1", password_confirmation: "guest1"})
+
+
 # category table data 
 
 category1 = Category.create({category_name: "transportation"})

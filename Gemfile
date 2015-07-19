@@ -29,7 +29,7 @@ gem 'bcrypt'
 
 gem 'paperclip'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.6'
 
 
 gem 'rails_12factor'
