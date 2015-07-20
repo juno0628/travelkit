@@ -1,2 +1,2 @@
 <div><%= image_tag @entry.expense_file.url(:medium) %></div>
-<div class="btn btn-primary btn-md"><%= link_to 'Back to List', "/travel_plans/" + @travelplan.id.to_s + "/edit" %></div>
+<%= button_to 'Back to List', "/travel_plans/" + @travelplan.id.to_s + "/edit", method: "get", class: "btn btn-primary btn-md" %>
