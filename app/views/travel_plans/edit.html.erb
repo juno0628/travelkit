@@ -21,8 +21,8 @@
 				<th>actual expense</th>
 				<th>created</th>
 				<th>updated</th>
-				<th id="entry-expense-file">expense file</th>
 				<th>edit entry</th>
+				<th id="entry-expense-file">expense file</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -34,14 +34,13 @@
 				<td><input type="text" id="entry-actual-expense" value="<%= entry.actual_expense %>"></input></td>
 				<td><%= entry.created_at.to_date %></td>
 				<td><%= entry.updated_at.to_date %></td>
-				<td><% if entry.expense_file != nil %>
-					 		<%= link_to 'view receipt', "/travel_plans/" + @travelplan.id.to_s + "/travel_plan_entries/" + entry.id.to_s%><br>
-					 	<% end %>
-					 		<%= link_to 'attach', "/travel_plan_entries/" + entry.id.to_s + "/edit"%>
-				</td>
-
 				<td>
 					<button class='travel-plan-page-update-button btn btn-primary btn-md' id='<%=entry.id%>'>update</button></td>
+				<td><% if entry.expense_file_file_name != nil %>
+					 		<%= link_to 'view receipt', "/travel_plans/" + @travelplan.id.to_s + "/travel_plan_entries/" + entry.id.to_s%><br>
+					 	<% end %>
+					 		<%= link_to 'attach file', "/travel_plan_entries/" + entry.id.to_s + "/edit"%>
+				</td>
 			</tr>
 		</tbody><tr><tr><tr><tr><tr>
 		<% end %>

@@ -12,6 +12,7 @@ class TravelPlanEntriesController < ApplicationController
 
 	def show
 		@entry = TravelPlanEntry.find(params[:id])
+		@travelplan = TravelPlan.find(params[:travel_plan_id])
 	end
 
 	private
