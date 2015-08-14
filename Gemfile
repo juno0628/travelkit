@@ -34,6 +34,12 @@ gem 'aws-sdk', '~> 1.6'
 
 gem 'rails_12factor'
 
+gem 'capybara'
+
+gem 'cucumber-rails'
+
+gem 'rspec'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
