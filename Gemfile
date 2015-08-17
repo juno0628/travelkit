@@ -34,11 +34,18 @@ gem 'aws-sdk', '~> 1.6'
 
 gem 'rails_12factor'
 
+gem 'rspec-rails'
+
 gem 'capybara'
+
+gem 'selenium-webdriver'
+
+gem 'factory_girl_rails'
+
+gem 'database_cleaner'
 
 gem 'cucumber-rails'
 
-gem 'rspec'
 
 
 # Use ActiveModel has_secure_password
