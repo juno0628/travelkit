@@ -86,3 +86,7 @@ td {
 	border-top: 0;
 }
 
+#city-search-text {
+	font-size: 16px;
+	line-height: 1.6;
+}
