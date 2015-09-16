@@ -1,20 +1,20 @@
 <br><br>
+
+<h1> Travel Planner - TravelKit</h1>
+<nav class="navigation_container">
+<span><button class='col-md-3 choice'><%= link_to "Profile", user_path(@user) %></button></span>
+<span><button class='col-md-3 choice'><%= link_to "Past Travels", travel_plans_path %></button></span>
+<span><button class='col-md-3 choice'><%= link_to "Create Travel Plan", new_travel_plan_path %></button></span>
+<span><button class='col-md-3 choice'><%= link_to "Upload Expenses", '/expense_index' %></button></span>
+</nav>
+<br><br><br>
 <div>
   <input class='col-md-6' type="text" id="city-search-text" placeholder="search city name to get weather info  ex)'London'"></input>
   <button class='btn btn-primary btn-sm' id="city-search-button">Search</button>
   <span id="result-cityname"></span><span id="result-temp"></span>
 </div>
-<br><br><br>
-<h1> Travel Planner - TravelKit</h1>
+<br><br>
 
-<nav class="navigation_container">
-<span><button class='col-md-3'><%= link_to "Profile", user_path(@user) %></button></span>
-<span><button class='col-md-3'><%= link_to "Past Travels", travel_plans_path %></button></span>
-<span><button class='col-md-3'><%= link_to "Create Travel Plan", new_travel_plan_path %></button></span>
-<span><button class='col-md-3'><%= link_to "Upload Expenses", '/expense_index' %></button></span>
-</nav>
-<br>
-<br>
 <div id="carousel-picture-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carousel-picture-generic" data-slide-to="0" class=""></li>
