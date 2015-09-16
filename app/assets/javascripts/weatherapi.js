@@ -26,8 +26,8 @@ $('document').ready(function(){
 		}).done(function(data) {
 				var newCurrency = currencyName.toUpperCase();
 				var newRate = Math.floor(data.rates[newCurrency]* 100)/100;
-				$('#result-exchange').text(newCurrency);
-				$('#result-rate').text(' '+ newRate + ' per dollar');
+				$('#result-rate').text(newRate);
+				$('#result-exchange').text(" " + newCurrency + " per dollar");	
 		})
 	}); //currency-search button click
 }) //document ready
