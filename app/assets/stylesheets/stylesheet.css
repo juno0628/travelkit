@@ -95,3 +95,18 @@ td {
 	font-size: 18px;
 	line-height: 2.0;
 }
+
+canvas {
+	display: inline;
+}
+
+#circle-canvas {
+	display: inline;
+}
+
+.floatingHeader {
+	position: fixed;
+	top: 0;
+	width: 76%;
+	z-index: 2;
+}

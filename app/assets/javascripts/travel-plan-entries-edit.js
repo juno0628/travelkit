@@ -16,7 +16,7 @@ $(document).ready(function() {
 				travel_plan_entry: {
 					notes: note,
 					estimated_amount: amt,
-					actual_expense: exp,
+					actual_expense: exp
 				}
 			}
 		//after updating database, parse to browser
@@ -27,4 +27,5 @@ $(document).ready(function() {
 			entry.fiind('#entry-expense-file').text(result.expense_file);
 		})
 	})
+
 });
