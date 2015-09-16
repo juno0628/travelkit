@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'rails-helper'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -34,20 +36,6 @@ gem 'aws-sdk', '~> 1.6'
 
 gem 'rails_12factor'
 
-gem 'rspec-rails'
-
-gem 'capybara'
-
-gem 'selenium-webdriver'
-
-gem 'factory_girl_rails'
-
-gem 'database_cleaner'
-
-gem 'cucumber-rails'
-
-
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -64,6 +52,17 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
+  gem 'rspec-rails'
+
+	gem 'capybara'
+
+	gem 'selenium-webdriver'
+
+	gem 'factory_girl_rails'
+
+	gem 'database_cleaner'
+
+	gem 'cucumber-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
