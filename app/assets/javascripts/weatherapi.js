@@ -10,8 +10,24 @@ $('document').ready(function(){
 		}).done(function(data) {
 			var newCity = data.list[0].name;
 			var temp = data.list[0].main.temp;
+			var desc = data.list[0].weather[0].main;
 			$('#result-cityname').text(" "+ newCity + "  ");
 			$('#result-temp').text(temp + "F");
+			$('#result-desc').text(" " + desc);
 		});
-	}); //button click  
+	}); //city-search button click  
+
+	$('#currency-search-button').on('click', function() {
+		var url = "https://openexchangerates.org/api/latest.json?app_id=adde111d9198457499396eba65aaab0b"
+		var currencyName = $('#currency-search-text').val();
+		$.ajax({
+			url: url,
+			type: "GET"
+		}).done(function(data) {
+				var newCurrency = currencyName.toUpperCase();
+				var newRate = Math.floor(data.rates[newCurrency]* 100)/100;
+				$('#result-exchange').text(newCurrency);
+				$('#result-rate').text(' '+ newRate + ' per dollar');
+		})
+	}); //currency-search button click
 }) //document ready
