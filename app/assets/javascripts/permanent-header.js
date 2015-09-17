@@ -16,7 +16,8 @@ $('document').ready(function() {
 			} else if (scrollTop <= 211) {
 				$('.permanent-header').removeClass('floatingHeader');
 			};
-		$(window).scroll(ChangeHeader)
-		$(window).trigger('scroll');
 		};
-	}
+	$(window).scroll(ChangeHeader)
+	$(window).trigger('scroll');
+	};
+};
