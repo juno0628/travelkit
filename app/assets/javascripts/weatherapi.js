@@ -3,7 +3,7 @@
 $('document').ready(function() {
 	$('#city-search-button').on('click', function() {
 		var cityName = $('#city-search-text').val();
-		var url = "https://api.openweathermap.org/data/2.5/find?q=" + cityName + "&units=imperial";
+		var url = "http://api.openweathermap.org/data/2.5/find?q=" + cityName + "&units=imperial";
 		$.ajax({
 			url: url,
 			type: "GET"
@@ -30,28 +30,6 @@ $('document').ready(function() {
 				$('#result-rate').text(newRate);
 				$('#result-exchange').text(" " + newCurrency + " per dollar");	
 		})
-	});
-//currency-search button click
+	});//currency-search button click
 
-//setting permanent header 
-	if ($('.permanent-header')) { 
-		function ChangeHeader() {
-		var el = $('.permanent-header');
-		var scrolled = el.offset().top;
-		var scrollTop = $(window).scrollTop();
-	
-	//add floatingheader class after scrolling
-	//class already exist  
-			if ((scrollTop > 211) && (!$('.permanent-header').hasClass('floatingHeader'))) {
-				$('.permanent-header').addClass('floatingHeader');
-				$('.permanent-header').addClass('floatingHeader');
-
-			} else if (scrollTop <= 211) {
-				$('.permanent-header').removeClass('floatingHeader');
-			};
-	};
-
-	$(window).scroll(ChangeHeader)
-	$(window).trigger('scroll');
-	}
 }) //document ready
