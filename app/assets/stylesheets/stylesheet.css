@@ -108,5 +108,10 @@ canvas {
 	position: fixed;
 	top: 0;
 	width: 76%;
-	z-index: 2;
+	overflow: hidden;
+	z-index: 7;
+}
+
+#earth-image {
+	width: 5%;
 }
