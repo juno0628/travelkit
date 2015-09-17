@@ -3,7 +3,7 @@
 $('document').ready(function() {
 	$('#city-search-button').on('click', function() {
 		var cityName = $('#city-search-text').val();
-		var url = "http://api.openweathermap.org/data/2.5/find?q=" + cityName + "&units=imperial";
+		var url = "https://api.openweathermap.org/data/2.5/find?q=" + cityName + "&units=imperial";
 		$.ajax({
 			url: url,
 			type: "GET"
@@ -34,7 +34,8 @@ $('document').ready(function() {
 //currency-search button click
 
 //setting permanent header 
-	function ChangeHeader() {
+	if ($('.permanent-header')) { 
+		function ChangeHeader() {
 		var el = $('.permanent-header');
 		var scrolled = el.offset().top;
 		var scrollTop = $(window).scrollTop();
@@ -52,4 +53,5 @@ $('document').ready(function() {
 
 	$(window).scroll(ChangeHeader)
 	$(window).trigger('scroll');
+	}
 }) //document ready
