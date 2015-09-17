@@ -110,6 +110,8 @@ canvas {
 	width: 76%;
 	overflow: hidden;
 	z-index: 7;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 #earth-image {

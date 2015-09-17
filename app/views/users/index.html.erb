@@ -1,13 +1,17 @@
 <img id="earth-image" src="http://i.imgur.com/GwUg64L.png"></img>
 <br><br>
 <h1> Travel Planner - TravelKit</h1>
-<nav class="navigation_container permanent-header">
+<div class="sticky">
+<div class="fixed">
+  <nav class="navigation_container permanent-header top-bar">
 
-<span><button class='col-md-3 choice'><%= link_to "Profile", user_path(@user) %></button></span>
-<span><button class='col-md-3 choice'><%= link_to "Past Travel Analytics", travel_plans_path %></button></span>
-<span><button class='col-md-3 choice'><%= link_to "Create Travel Plan", new_travel_plan_path %></button></span>
-<span><button class='col-md-3 choice'><%= link_to "Upload Expense File", '/expense_index' %></button></span>
-</nav>
+  <div><button class='col-md-3 choice'><%= link_to "Profile", user_path(@user) %></button></div>
+  <div><button class='col-md-3 choice'><%= link_to "Past Travel Analytics", travel_plans_path %></button></div>
+  <div><button class='col-md-3 choice'><%= link_to "Create Travel Plan", new_travel_plan_path %></button></div>
+  <div><button class='col-md-3 choice'><%= link_to "Upload Expense File", '/expense_index' %></button></div>
+  </nav>
+</div>
+</div>
 <br><br><br>
 <div id="city-weather-search">
   <h5>Powered by Weather API</h5>

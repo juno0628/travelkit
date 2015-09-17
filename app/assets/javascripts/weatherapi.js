@@ -41,10 +41,11 @@ $('document').ready(function() {
 	
 	//add floatingheader class after scrolling
 	//class already exist  
-			if ((scrollTop > scrolled) && (!$('.permanent-header').hasClass('floatingHeader'))) {
+			if ((scrollTop > 211) && (!$('.permanent-header').hasClass('floatingHeader'))) {
+				$('.permanent-header').addClass('floatingHeader');
 				$('.permanent-header').addClass('floatingHeader');
 
-			} else if (scrollTop <= scrolled) {
+			} else if (scrollTop <= 211) {
 				$('.permanent-header').removeClass('floatingHeader');
 			};
 	};
