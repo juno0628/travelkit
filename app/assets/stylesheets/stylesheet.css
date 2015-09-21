@@ -1,25 +1,55 @@
+@media (max-width: 768px) {
+	#profile-information-container {
+	padding: 10px;
+	line-height: 15px;
+	float: left;
+	}	
+	#city-search-text, #currency-search-text {
+		width: 100%;
+	}
+	#yield-page {
+		height: 2200px;
+	}
+	.navigation_container {
+		display: block;
+	}
+}
+
+@media (max-width: 1061px) {
+	.navigation_container {
+		display: block;
+	}
+}
+
+@media (min-width: 1061px) {
+	#profile-information-container {
+		padding: 20px;
+		line-height: 25px;
+		float: left;
+	}
+	#city-search-text, #currency-search-text {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+}
+
 body {
 	background-color: #3F5DFC;
 	background-image: url('http://images.clipartpanda.com/cloud-icon-png-cloud.png');
-}
-
-#yield-page {
-	padding: 2%;
-	position: absolute;
-	left: 10%;
-	right: 10%;
-	height: 1800px;
-	background-color: white;
 }
 
 #profile-image-container {
 	float: left;
 }
 
-#profile-information-container {
-	padding: 20px;
-	line-height: 25px;
-	float: left;
+#yield-page {
+padding: 2%;
+position: absolute;
+left: 10%;
+right: 10%;
+height: 1800px;
+background-color: white;
 }
 
 #profile-page-image {
@@ -84,11 +114,6 @@ td {
 	padding-bottom: 7px;
 	padding-left: 10px;
 	border-top: 0;
-}
-
-#city-search-text, #currency-search-text {
-	font-size: 16px;
-	line-height: 1.6;
 }
 
 .choice {

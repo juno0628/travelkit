@@ -1,6 +1,6 @@
 
 //setting permanent header 
-if ($('.permanent-header').hasClass('top-bar')) {
+$('document').ready(function() { 
 	function ChangeHeader() {
 	var el = $('.permanent-header');
 	var scrollTop = $(window).scrollTop();
@@ -15,6 +15,8 @@ if ($('.permanent-header').hasClass('top-bar')) {
 			$('.permanent-header').removeClass('floatingHeader');
 		};
 	};
-	$(window).scroll(ChangeHeader)
+	if($('.permanent-header').hasClass('top-bar')) {
+		$(window).scroll(ChangeHeader)
+	}
 	$(window).trigger('scroll');
-};
+});
