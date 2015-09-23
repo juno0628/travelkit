@@ -24,7 +24,7 @@ $(document).ready(function() {
 			entry.find('#entry-notes').val(result.notes);
 			entry.find('#entry-estimated-amount').val(result.estimated_amount);
 			entry.find('#entry-actual-expense').val(result.actual_expense);
-			entry.fiind('#entry-expense-file').text(result.expense_file);
+			entry.find('#entry-expense-file').text(result.expense_file);
 		})
 	})
 

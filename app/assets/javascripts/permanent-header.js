@@ -10,11 +10,11 @@ $('document').ready(function() {
 		if ((scrollTop > 211) && (!$('.permanent-header').hasClass('floatingHeader'))) {
 			$('.permanent-header').addClass('floatingHeader');
 			$('.permanent-header').addClass('floatingHeader');
-
 		} else if (scrollTop <= 211) {
 			$('.permanent-header').removeClass('floatingHeader');
 		};
 	};
+	
 	if($('.permanent-header').hasClass('top-bar')) {
 		$(window).scroll(ChangeHeader)
 	}
